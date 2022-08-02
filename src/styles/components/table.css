@@ -1,0 +1,116 @@
+.m-table {
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.m-table tr {
+    border-bottom: 1px solid #bbbbbb;
+    height: 48px;
+}
+
+table.m-table th {
+    position: sticky;
+    top: 0;
+    background-color: #FFFF;
+    border-bottom: 1px solid #ccc;
+}
+
+.m-table td,
+th {
+    padding: 0 10px;
+}
+
+.m-table td,
+.m-table th {
+    font-size: 13px;
+    height: 48px;
+    padding-left: 10px;
+}
+
+table.m-table tbody tr>:first-child {
+    padding-left: 16px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 1px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: rgb(187, 187, 187);
+    border-radius: 1px;
+}
+
+.m-table tbody tr:hover {
+    background-color: #EBF4FF;
+    cursor: pointer;
+}
+
+
+/* .m-table tbody tr.m-row-selected {
+        background-color: #E3F3EE;
+    }*/
+
+.m-grid {
+    width: 100%;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+}
+
+.m-grid .m-grid-table {
+    width: 100%;
+    height: calc(100vh - 224px);
+    /* overflow: scroll;*/
+    /*31/3/2022 by hang*/
+    overflow: auto;
+}
+
+.m-grid .m-paging {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.m-tabletbody tr td {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.selectedRow {
+    background-color: #ebf9f4;
+}
+
+.m-table tbody tr .m-icon-action {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    padding: 0px 10px;
+    z-index: 5;
+}
+
+.m-table tbody tr #icon-edit-employee {
+    background-image: url(../../assets/icon/edit.png);
+}
+
+.m-table tbody tr #icon-delete-employee {
+    background-image: url(../../assets/icon/icon-delete.png);
+}

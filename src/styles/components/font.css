@@ -1,0 +1,39 @@
+@font-face {
+    font-family: GoogleSans-Black;
+    src: url(../../assets/font/GoogleSans-Black.otf);
+}
+
+@font-face {
+    font-family: GoogleSans-Regular;
+    src: url(../../assets/font/GoogleSans-Regular.otf);
+}
+
+@font-face {
+    font-family: GoogleSans-Light;
+    src: url(../../assets/font/GoogleSans-Light.otf);
+}
+
+@font-face {
+    font-family: GoogleSans-BlackItalic;
+    src: url(../../assets/font/GoogleSans-BlackItalic.otf);
+}
+
+@font-face {
+    font-family: GoogleSans-LightItalic;
+    src: url(../../assets/font/GoogleSans-LightItalic.otf);
+}
+
+@font-face {
+    font-family: GoogleSans-Bold;
+    src: url(../../assets/font/GoogleSans-Bold.otf);
+}
+
+@font-face {
+    font-family: GoogleSans-BoldItalic;
+    src: url(../../assets/font/GoogleSans-BoldItalic.otf);
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(../../assets/font/Roboto-Regular.ttf);
+}

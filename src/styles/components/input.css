@@ -1,0 +1,105 @@
+@import url(../components/font.css);
+input {
+    height: 40px;
+    padding-left: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 16px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #BBBBBB;
+    font-family: GoogleSans-Regular;
+}
+
+input:focus {
+    border-color: #019160;
+}
+
+.input-search {
+    border-radius: 4px;
+    font-family: GoogleSans-Regular;
+    outline: none;
+    border: 1px solid #BBBBBB;
+}
+
+.input-search:active {
+    border: 1px solid #019160;
+}
+
+.m-input {
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #bbbbbb;
+    padding-left: 16px;
+    padding-right: 16px;
+    outline: none;
+}
+
+.m-input:focus {
+    border-color: #019160;
+}
+
+.m-input-error {
+    border-color: #FF4747;
+    color: white;
+}
+
+
+/* khối chứa message cảnh báo */
+
+.m-error-box {
+    position: relative;
+    background-color: #FF4747;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 4px;
+}
+
+
+/* text message trong khối cảnh báo */
+
+.m-error-box .error-text {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* khối mũi tên hướng xuống */
+
+.m-error-box .m-box-arrow {
+    position: absolute;
+    left: 50%;
+    z-index: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #FF4747;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+
+/* css cho dialog thêm nhân viên */
+
+input[type="file"] {
+    display: none;
+}
+
+.input-dialog-employee {
+    width: 200px;
+    border: 1px solid #bbbbbb;
+    height: 40px;
+}
+
+input[type="date"] {
+    padding-right: 5px;
+    width: 200px;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+}
+
+.m-label-red {
+    color: red;
+}

@@ -1,0 +1,60 @@
+.m-content {
+    position: absolute;
+    top: 36px;
+    left: 225px;
+    right: 0;
+    bottom: 0;
+    padding: 24px;
+}
+
+.m-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.m-page-header .m-page-title {
+    font-weight: 800;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+
+/* phan filter */
+
+content-filter {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 1px 1px 1px;
+    background-color: white;
+}
+
+.content-filter .filter-left {
+    display: flex;
+    height: 42px;
+    margin-left: 16px;
+}
+
+.filter-left .search-by-id {
+    width: 300px;
+    border-radius: 4px;
+}
+
+.search-by-id .search-box {
+    background-image: url(../../assets/icon/search.png);
+    background-position: 16px center;
+    background-repeat: no-repeat;
+    border: 1px solid #BBBBBB;
+    padding: 8px 8px 8px 40px;
+    width: 300px;
+    font-size: 12px;
+    height: 40px;
+}
+
+.search-by-id .search-box:focus {
+    border-color: #019160;
+}

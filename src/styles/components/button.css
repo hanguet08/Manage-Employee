@@ -1,0 +1,96 @@
+    /* button default */
+    
+    .m-btn {
+        height: 40px;
+        min-width: 100px;
+        background-color: #019160;
+        border-radius: 4px;
+        padding: 0 24px;
+        text-align: center;
+        border: none;
+        font-size: 13px;
+        color: #ffffff;
+        font-family: GoogleSans-Regular;
+        outline: none;
+        cursor: pointer;
+    }
+    
+    .m-btn:hover {
+        background-color: #2FBE8E;
+        transition: all 0.3s ease;
+    }
+    
+    .m-btn:active {
+        background-color: #01B075;
+    }
+    /* background image cho button */
+    
+    .m-btn-bg {
+        padding-left: 40px;
+        padding-right: 16px;
+        background-position: 16px center;
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+    }
+    
+    .m-btn-refresh {
+        height: 40px;
+        width: 40px;
+        background-color: white;
+    }
+    
+    .m-btn-page {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        border-radius: 4px;
+        border: none;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #e9ebee;
+        outline: none;
+    }
+    
+    .m-btn-pagenumber {
+        float: left;
+        width: 40px;
+        height: 40px;
+        color: black;
+        margin: 8px;
+        border-radius: 50%;
+        align-items: center;
+        border: 1px solid #bbbbbb;
+        text-align: center;
+        background-size: contain;
+        background-color: #e9ebee;
+        cursor: pointer;
+    }
+    
+    .m-btn-pagenumber:hover {
+        background-color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .active-page {
+        background-color: #019160;
+    }
+    /* css cho dialog thêm nhân viên */
+    
+    .m-btn-save {
+        right: 16px;
+        position: absolute;
+        text-align: center;
+        line-height: 2;
+    }
+    
+    .m-btn-destroy {
+        color: black;
+        height: 40px;
+        margin-right: 16px;
+        right: 116px;
+        position: absolute;
+        text-align: center;
+        background-color: #e9ebee;
+    }

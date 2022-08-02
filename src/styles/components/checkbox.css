@@ -1,0 +1,26 @@
+.m-checkbox {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    margin: 0;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 10px;
+}
+
+.m-checkbox.checked {
+    background-color: #019160;
+    border: 1px solid #019160;
+}
+
+.m-checkbox.checked .fa-check {
+    opacity: 1;
+}
+
+.m-checkbox .fa-check {
+    opacity: 0;
+}
