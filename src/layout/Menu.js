@@ -5,20 +5,20 @@ function Menu() {
     <div className ="m-navbar">
     <Link to="/" className="m-menu-item m-menu-selected">
            <div className="m-menu-icon"><i className="fa-solid fa-chart-pie"></i></div>
-           <div className="m-meni-text">Tổng quan</div>
+           <div className="m-menu-text">Tổng quan</div>
        </Link>
       <Link to="/addcontact" className="m-menu-item">
            <div className="m-menu-icon"><i className="fa-solid fa-chart-column"></i></div>
-           <div className="m-meni-text">Danh mục nhân viên</div>
+           <div className="m-menu-text">Danh mục nhân viên</div>
        </Link>
        <Link to ="/customer" className="m-menu-item">
            <div className="m-menu-icon"><i className="fa-solid fa-chart-pie"></i></div>
-           <div className="m-meni-text">Mua hàng</div>
+           <div className="m-menu-text">Mua hàng</div>
        </Link>
        
         <Link to ="/setting" className="m-menu-item">
            <div className="m-menu-icon"><i className="fa-solid fa-chart-pie"></i></div>
-           <div className="m-meni-text">Thiết lập hệ thống</div>
+           <div className="m-menu-text">Thiết lập hệ thống</div>
        </Link>
     
    </div>

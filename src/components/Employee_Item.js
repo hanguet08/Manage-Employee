@@ -1,10 +1,18 @@
-import React from "react";
+import React,{ useState,useEffect } from "react";
 import { NavLink } from "react-router-dom"
-import { DeleteEmployee } from "../redux/actions/EmployeeActions";
-import { useDispatch } from "react-redux";
+import { DeleteEmployee, editEmployee } from "../redux/actions/EmployeeActions";
+import { useSelector,useDispatch } from "react-redux";
+import EmployeeForm from "./EmployeeForm";
+import "../styles/layout/employeeForm.css"
+import {openFormEdit} from '../redux/actions/FormAction'
 
 function Employee_Item({ employee }, props) {
+   // const [show, setShow] = useState(false);
+    // const handleEditEmployee = () => {
+    //     setShow(!show);
+    // }
     let dispatch = useDispatch();
+      const {isOpen}=useSelector((state)=> state.FormReducer)
     return (
         <tr>
             <td style={{ paddingRight: "0px" }}>
@@ -25,6 +33,10 @@ function Employee_Item({ employee }, props) {
                     <span
                         id="icon-edit-employee"
                         className="m-icon-action"
+                        onClick={() => {
+                            dispatch(openFormEdit());
+                            dispatch(editEmployee(employee.employeeID))
+                        }}
                     ></span>
                     <span
                         id="icon-delete-employee"

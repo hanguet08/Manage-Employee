@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../styles/layout/employeeForm.css"
 import avatar from "../assets/img/default-avatar.jpg"
-import { useDispatch } from 'react-redux';
-import { addEmployee } from '../redux/actions/EmployeeActions'
+import { useDispatch, useSelector } from 'react-redux';
+import { addEmployee, editEmployee, PostEditEmployee } from '../redux/actions/EmployeeActions'
+import {closeModal} from '../redux/actions/FormAction';
+import { useParams } from 'react-router-dom';
 const EmployeeForm = (props) => {
   let dispatch = useDispatch();
+  const {forMode}=useSelector((state)=> state.FormReducer);
+  console.log(forMode);
   const [employeeID, setEmployeeID] = useState("");
   const [employeeName, setEmployeeName] = useState("");
   const [numberOfPhone, setNumberOfPhone] = useState("");
@@ -27,6 +31,7 @@ const EmployeeForm = (props) => {
         salary: salary
       }
     ));
+    dispatch(closeModal());
     setEmployeeID("")
     setEmployeeName("")
     setNumberOfPhone("")
@@ -35,8 +40,61 @@ const EmployeeForm = (props) => {
     setGender("")
     setDepartment("")
     setSalary("")
-    props.handleAddEmployee();
+   
   }
+  function handleUpdateOnClick(e) {
+    e.preventDefault();
+    dispatch(PostEditEmployee
+      (
+        {
+          employeeID: employeeID,
+          employeeName: employeeName,
+          numberOfPhone: numberOfPhone,
+          email: email,
+          dateOfBirth: dateOfBirth,
+          gender: gender,
+          department: department,
+          salary: salary
+        }
+      ))
+    dispatch(closeModal());
+    setEmployeeID("")
+    setEmployeeName("")
+    setNumberOfPhone("")
+    setEmail("")
+    setDateOfBirth("")
+    setGender("")
+    setDepartment("")
+    setSalary("")
+
+  }
+  function onSubmit(e){
+    e.preventDefault();
+    if (forMode ===1){
+      handleAddOnClick(e)
+    }
+    else if (forMode ===2){
+      handleUpdateOnClick(e);
+    }
+  }
+
+  //edit
+  const { id } = useParams();
+    const employeeEdit = useSelector(state => state.EditEmployeeReducer);
+    useEffect(() => {
+        dispatch(editEmployee(id));
+        setEmployeeID(employeeEdit.employeeID)
+        setEmployeeName(employeeEdit.employeeName)
+        setNumberOfPhone(employeeEdit.numberOfPhone)
+        setEmail(employeeEdit.email)
+        setDateOfBirth(employeeEdit.dateOfBirth)
+        setGender(employeeEdit.gender)
+        setDepartment(employeeEdit.department)
+        setSalary(employeeEdit.salary)
+  
+    }, [employeeEdit.employeeID]);
+
+ 
 
   return (
     <>
@@ -45,7 +103,10 @@ const EmployeeForm = (props) => {
           {/* phan header */}
           <div className="m-dialog-header">
             <div className="close-dialog">
-              <i className="fas fa-times" onClick={props.handleAddEmployee}>
+              <i className="fas fa-times" 
+               onClick={() => {
+                dispatch(closeModal());
+              }}>
               </i>
             </div>
           </div>
@@ -190,14 +251,18 @@ const EmployeeForm = (props) => {
               id="btnSave"
               type="submit"
               className="m-btn m-btn-save btnForm"
-              onClick={handleAddOnClick}
+              onClick={
+               onSubmit
+              }
             >
               <i className="far fa-save icon-save"></i>Lưu
             </button>
             <button
               id="btnCancel"
               className="m-btn m-btn-destroy btnForm"
-              onClick={props.handleAddEmployee}
+              onClick={() => {
+                dispatch(closeModal());
+              }}
             >
               Hủy
             </button>

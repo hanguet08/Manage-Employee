@@ -3,6 +3,7 @@
     width: 225px;
     border-right: 1px solid #bebebe;
     background-color: #E7E9EB;
+    font-family: GoogleSans-Regular;
 }
 
 .m-navbar .m-menu-item {
@@ -11,6 +12,7 @@
     height: 44px;
     padding-left: 16px;
     cursor: pointer;
+    text-decoration: none
 }
 
 .m-navbar .m-menu-item.router-link-active {

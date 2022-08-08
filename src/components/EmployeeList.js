@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {getEmployees} from '../redux/actions/EmployeeActions'
+import {openModal} from '../redux/actions/FormAction'
 import "../styles/main.css"
 import Employee_Item from './Employee_Item'
 import EmployeeForm from './EmployeeForm'
 const EmployeeList = () => {
     let dispatch= useDispatch();
+    const {isOpen}=useSelector((state)=> state.FormReducer)
     const employees= useSelector(state=> state.EmployeeReducer);
     console.log(employees);
     useEffect(() => {
         dispatch(getEmployees());
     }, []);
-  
-    const [show, setShow] = useState(false);
-    const handleAddEmployee = () => {
-        setShow(!show);
-    }
+   
     return (<div>
         <div className="m-page-header">
             <div className="m-page-title">Danh sách nhân viên</div>
@@ -23,10 +21,15 @@ const EmployeeList = () => {
                 <button
                     className="m-btn m-btn-bg add-icon"
                     id="btnAddEmployee"
-                    onClick={handleAddEmployee}>
+                    onClick={() => {
+                        dispatch(openModal())
+                    }}>
                     Thêm Nhân viên
                 </button>
-                {show && <EmployeeForm handleAddEmployee={handleAddEmployee} />}
+             
+                {isOpen &&  <EmployeeForm/>}
+                {/* {show && <EmployeeForm handleAddEmployee={handleAddEmployee} />} */}
+               
             </div>
         </div>
         {/* phan tim kiem */}
@@ -65,7 +68,7 @@ const EmployeeList = () => {
                     <tbody>
                        {employees.map(employee=>{
                         return <Employee_Item key={employee.employeeID} employee={employee}
-                        handleAddEmployee={handleAddEmployee}/>
+                       />
                        })} 
                     </tbody>
                 </table>

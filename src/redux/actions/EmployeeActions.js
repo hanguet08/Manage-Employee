@@ -1,10 +1,9 @@
 import { GET_EMPLOYEES, ADD_EMPLOYEE, EDIT_EMPLOYEE, DELETE_EMPLOYEE, UPDATE_EMPLOYEE } from "../types/EmployeeTypes";
 import callApi from "../../callApi/callApi";
 export const getEmployees = () => {
-    return (dispatch) => {
-        return callApi('employees', 'GET', null).then(res => {
-            dispatch(getEmployeesRD(res.data))
-        })
+    return async(dispatch) => {
+        const res = await callApi('employees', 'GET', null);
+        dispatch(getEmployeesRD(res.data));
 
     }
 }
@@ -16,11 +15,10 @@ export const getEmployeesRD = (employees) => {
 
 }
 export function addEmployee(employee) {
-    return (dispatch) => {
-        return callApi('employees', 'POST', employee).then(res => {
-            dispatch(addEmployeeRD(employee));
-            dispatch(getEmployees())
-        })
+    return async(dispatch) => {
+        const res = await callApi('employees', 'POST', employee);
+        dispatch(addEmployeeRD(employee));
+        dispatch(getEmployees());
     }
 }
 export function addEmployeeRD(employee) {
@@ -30,12 +28,11 @@ export function addEmployeeRD(employee) {
     }
 }
 
-export function editemployee(employeeID) {
+export function editEmployee(employeeID) {
     return (dispatch) => {
         return callApi(`employees/${employeeID}`, 'GET', null).then(res => {
-            dispatch(editEmployeeRD(res.data))
+            dispatch(editEmployeeRD(res.data));
         })
-
     }
 }
 
@@ -47,10 +44,9 @@ export function editEmployeeRD(employee) {
 }
 
 export function PostEditEmployee(employee) {
-    return (dispatch) => {
-        return callApi(`employees/${employee.employeeID}`, 'PUT', employee).then(res => {
-            dispatch(PostEditEmployeeRD(employee))
-        })
+    return async(dispatch) => {
+        const res = await callApi(`employees/${employee.employeeID}`, 'PUT', employee);
+        dispatch(PostEditEmployeeRD(employee));
     }
 }
 export function PostEditEmployeeRD(employee) {
@@ -62,11 +58,10 @@ export function PostEditEmployeeRD(employee) {
 
 
 export function DeleteEmployee(employeeID) {
-    return (dispatch) => {
-        return callApi(`employees/${employeeID}`, 'DELETE', null).then(res => {
-            dispatch(DeleteEmployeeRD(employeeID))
-            dispatch(getEmployees())
-        })
+    return async(dispatch) => {
+        const res = await callApi(`employees/${employeeID}`, 'DELETE', null);
+        dispatch(DeleteEmployeeRD(employeeID));
+        dispatch(getEmployees());
     }
 }
 
